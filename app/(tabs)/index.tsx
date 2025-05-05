@@ -1,8 +1,11 @@
 import { Text, View, StyleSheet} from 'react-native';
 import { Link } from 'expo-router';
 import { Image } from 'expo-image';
+import Button from '@/components/Buttons';
+//import { Image } from 'react-native';
+import PlaceholderImage from '@/components/ImageViewer';
+//import { Image } from 'expo-image';
 
-const PlaceholderImage = require('@/assets/images/background-image.png');
 //import image from '../assets/images/1.jpg';
 // This is the main screen of the app. It displays a simple text "Home screen" in the center of the screen.
 // It also includes a link to the "About" screen, which is defined in the app/about.tsx file.
@@ -11,7 +14,12 @@ export default function index() {
     <View style={styles.container}>
       <View style ={styles.imageContainer}>
         <Image source={PlaceholderImage} style={styles.image} />
-        </View> 
+        </View>
+        <View style={styles.footerContainer}>
+          <Button label = "Choose a photo" />
+          <Button label = "Use this photo" />
+          </View>
+
         <Text style ={styles.text}>Home screen</Text>
         <Link href="/about">
           <Text style={styles.text}>Go to About</Text>
@@ -45,5 +53,10 @@ image: {width: 320,
         height: 440,
         borderRadius: 18,
 },
+footerContainer: {
+  flex: 1 / 3,
+  alignItems: 'center',
+},
+// This is a style for the footer container. It takes up one-third of the screen height and centers its content.
 });
 // This is a simple style for the image container and image elements. The image container takes up the full width and height of the screen, and centers its content.
