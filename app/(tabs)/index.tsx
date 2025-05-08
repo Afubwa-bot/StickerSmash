@@ -34,7 +34,7 @@ export default function index() {
   return (
     <View style={styles.container}>
       <View style ={styles.imageContainer}>
-        <ImageViewer imgsource={PlaceholderImage}/>
+        <ImageViewer imgSource={PlaceholderImage}/>
         </View>
         <View style={styles.footerContainer}>
           <Button theme = "primary" label="Choose a photo" />
