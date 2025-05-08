@@ -1,6 +1,4 @@
 import { Text, View, StyleSheet} from 'react-native';
-import { Link } from 'expo-router';
-import { Image } from 'expo-image';
 import Button from '@/components/Buttons';
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
@@ -37,17 +35,11 @@ export default function index() {
     <View style={styles.container}>
       <View style ={styles.imageContainer}>
         <ImageViewer imgsource={PlaceholderImage} selectedImage = {selectImage}/>
-        <Image source={PlaceholderImage} style={styles.image} />
         </View>
         <View style={styles.footerContainer}>
           <Button label = "Choose a photo" />
           <Button label = "Use this photo" />
           </View>
-
-        <Text style ={styles.text}>Home screen</Text>
-        <Link href="/about">
-          <Text style={styles.text}>Go to About</Text>
-        </Link>
 
         </View>
         );
@@ -57,19 +49,7 @@ const styles = StyleSheet.create({container: {
   flex: 1,
   backgroundColor: '#25292e',
   alignItems: 'center',
-  justifyContent: 'center',
 },
-text: { 
-  color: '#fff',
-},
-// This is a simple style for the container and text elements. The container has a dark background color and centers its content.
-button: {
-  fontSize:20,
-  textDecorationLine: 'underline',
-  color: '#fff',
-},
-// This is a style for the button text. It makes the text larger, underlined, and white in color.
-
 imageContainer: {
   flex: 1,
 },

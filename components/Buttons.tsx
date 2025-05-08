@@ -3,7 +3,6 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 type Props = {
     label: string;
     theme ?: 'primary';
-    onPress?: () => void;
     // onPress is a function that is called when the button is pressed. It is optional and can be used to handle button press events.
     // theme is a string that can be used to specify the theme of the button. It is also optional and can be used to apply different styles based on the theme.
     // For example, you can use 'primary' to apply a primary theme style to the button.
