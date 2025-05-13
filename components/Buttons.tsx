@@ -3,13 +3,14 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 type Props = {
     label: string;
     theme ?: 'primary';
+    onPress?: () => void;
     // onPress is a function that is called when the button is pressed. It is optional and can be used to handle button press events.
     // theme is a string that can be used to specify the theme of the button. It is also optional and can be used to apply different styles based on the theme.
     // For example, you can use 'primary' to apply a primary theme style to the button.
 
 };
 
-export default function Button({ label, theme }: Props) {
+export default function Button({ label, theme, onPress }: Props) {
   // This is a functional component that takes in props and returns a button. It uses the Pressable component from React Native to create a button that can be pressed. The label prop is passed to the button as the text label. The theme prop is used to determine the style of the button.
   if (theme === 'primary') {
     return (

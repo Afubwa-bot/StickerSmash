@@ -1,7 +1,6 @@
-import { Text, View, StyleSheet} from 'react-native';
+import { View, StyleSheet} from 'react-native';
 import Button from '@/components/Buttons';
 import * as ImagePicker from 'expo-image-picker';
-import { useState } from 'react';
 import ImageViewer from '@/components/ImageViewer';
 // This code imports various components and libraries from React Native and Expo. It includes the Text, View, StyleSheet components from React Native, Link from expo-router, Image from expo-image, and Button from a custom component.
 // import image picker form expo-image-picker
@@ -13,15 +12,15 @@ const PlaceholderImage = require('@/assets/images/background-image.png');
 // This is the main screen of the app. It displays a simple text "Home screen" in the center of the screen.
 // It also includes a link to the "About" screen, which is defined in the app/about.tsx file.
 export default function index() {
-  const pickimage = async () => {
+  const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes:('images'),
       allowsEditing: true,
       quality: 1,
     });
     if (!result.canceled) {
-      console.log(result.assets[0].uri);
-    }else{
+      console.log(result);
+    }else{ 
       alert('You did not select any image');
     }
   };
@@ -33,7 +32,7 @@ export default function index() {
         <ImageViewer imgSource={PlaceholderImage}/>
         </View>
         <View style={styles.footerContainer}>
-          <Button theme = "primary" label="Choose a photo" />
+          <Button theme = "primary" label="Choose a photo" onPress={pickImageAsync}/>
           <Button label = "Use this photo" />
           </View>
 
