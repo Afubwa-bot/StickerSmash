@@ -13,9 +13,6 @@ const PlaceholderImage = require('@/assets/images/background-image.png');
 // This is the main screen of the app. It displays a simple text "Home screen" in the center of the screen.
 // It also includes a link to the "About" screen, which is defined in the app/about.tsx file.
 export default function index() {
-  const [selectImage, setSelectImage] = useState<string | undefined>(undefined);
-  // This is a state variable that holds the selected image. It is initialized to null, indicating that no image has been selected yet.
-  // This function is called when the user selects an image from the image library. It uses the ImagePicker API to launch the image library and allows the user to select an image. If the user selects an image, it logs the URI of the selected image to the console. If the user cancels the selection, it shows an alert message.
   const pickimage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes:('images'),
@@ -23,7 +20,6 @@ export default function index() {
       quality: 1,
     });
     if (!result.canceled) {
-      setSelectImage(result.assets[0].uri);
       console.log(result.assets[0].uri);
     }else{
       alert('You did not select any image');
